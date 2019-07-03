@@ -24,18 +24,8 @@
         [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:rgb(51,51,51)}];\
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
 
-#define AppBaseColor [UIColor colorWithRed:71/255.0 green:133/255.0 blue:255/255.0 alpha:1]
-#define KeywordColor [UIColor colorWithRed:247/255.0 green:76/255.0 blue:49/255.0 alpha:1]
-#define BGColor [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1]
 #define AppName [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]
-#define NOTIFY_NETWORK_STATE_CHANGED @"NetworkStateChanged"
 
-#define PhotoDefault [UIImage imageNamed:@"photoDefault"]
-#define PhotoDefault1 [UIImage imageNamed:@"photoDefault1"]
-#define PhotoDefault2 [UIImage imageNamed:@"photoDefault2"]
-#define Placeholder1_1 [UIImage imageNamed:@"loading1_1_default"]
-#define Placeholder4_3 [UIImage imageNamed:@"loading4_3_default"]
-#define None_noMessage @"none_noMessage"
 
 
 //NSUserDefaults 实例化
