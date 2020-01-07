@@ -61,7 +61,7 @@
 #define isiPhoneXsMax ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) && !IPAD : NO)
 
 
-#define isiPhoneX_All ([UIScreen mainScreen].bounds.size.height == 812 || [UIScreen mainScreen].bounds.size.height == 896)
+#define isiPhoneX_All ([UIScreen mainScreen].bounds.size.height >= 812 || [UIScreen mainScreen].bounds.size.height >= 896)
 #define Height_tapBar (isiPhoneX_All ? 83.0f:49.0f)
 #define Height_BottomSafe (isiPhoneX_All? 34.0f:0.0f)
 
