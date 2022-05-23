@@ -1,7 +1,7 @@
 //
 //  MacroDefinition.h
 //  ZJInternetHospital
-//  
+//
 //  Created by gulu on 17/8/11.
 //  Copyright © 2017年 gulu. All rights reserved.
 //
@@ -12,14 +12,27 @@
 #define HEIGHT self.view.frame.size.height
 
 #define StatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
-#define NAV_HEIGHT (StatusBarHeight+44)
 
 #define KNavBarTinColor_White \
+        if (@available(iOS 15.0, *)) {\
+            UINavigationBarAppearance *barAppearance = [UINavigationBarAppearance new];\
+            barAppearance.shadowColor = [UIColor clearColor];\
+            barAppearance.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};\
+            self.navigationController.navigationBar.standardAppearance = barAppearance;\
+            self.navigationController.navigationBar.scrollEdgeAppearance = barAppearance;\
+        }\
         [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];\
         [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];\
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
 
 #define KNavBarTinColor_Black \
+        if (@available(iOS 15.0, *)) {\
+            UINavigationBarAppearance *barAppearance = [UINavigationBarAppearance new];\
+            barAppearance.shadowColor = [UIColor clearColor];\
+            barAppearance.titleTextAttributes = @{NSForegroundColorAttributeName:rgb(51,51,51)};\
+            self.navigationController.navigationBar.standardAppearance = barAppearance;\
+            self.navigationController.navigationBar.scrollEdgeAppearance = barAppearance;\
+        }\
         [self.navigationController.navigationBar setTintColor:rgb(51,51,51)];\
         [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:rgb(51,51,51)}];\
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
@@ -64,6 +77,7 @@
 #define isiPhoneX_All ([UIScreen mainScreen].bounds.size.height >= 812 || [UIScreen mainScreen].bounds.size.height >= 896)
 #define Height_tapBar (isiPhoneX_All ? 83.0f:49.0f)
 #define Height_BottomSafe (isiPhoneX_All? 34.0f:0.0f)
+#define NAV_HEIGHT ((isiPhoneX_All ? 44.0f:20.0f)+44)
 
 #define dispatch_async_main_safe(block)\
 if ([NSThread isMainThread]) {\
