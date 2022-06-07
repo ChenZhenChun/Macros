@@ -14,25 +14,11 @@
 #define StatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
 
 #define KNavBarTinColor_White \
-        if (@available(iOS 15.0, *)) {\
-            UINavigationBarAppearance *barAppearance = [UINavigationBarAppearance new];\
-            barAppearance.shadowColor = [UIColor clearColor];\
-            barAppearance.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};\
-            self.navigationController.navigationBar.standardAppearance = barAppearance;\
-            self.navigationController.navigationBar.scrollEdgeAppearance = barAppearance;\
-        }\
         [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];\
         [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];\
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
 
 #define KNavBarTinColor_Black \
-        if (@available(iOS 15.0, *)) {\
-            UINavigationBarAppearance *barAppearance = [UINavigationBarAppearance new];\
-            barAppearance.shadowColor = [UIColor clearColor];\
-            barAppearance.titleTextAttributes = @{NSForegroundColorAttributeName:rgb(51,51,51)};\
-            self.navigationController.navigationBar.standardAppearance = barAppearance;\
-            self.navigationController.navigationBar.scrollEdgeAppearance = barAppearance;\
-        }\
         [self.navigationController.navigationBar setTintColor:rgb(51,51,51)];\
         [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:rgb(51,51,51)}];\
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
