@@ -23,6 +23,29 @@
         [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:rgb(51,51,51)}];\
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
 
+#define KNavBarTinColor_White_AndBGColor(navBGColor) \
+        if (@available(iOS 15.0, *)) {\
+            UINavigationBarAppearance *barAppearance = [UINavigationBarAppearance new];\
+            barAppearance.backgroundColor = navBGColor;\
+            barAppearance.shadowColor = [UIColor clearColor];\
+            barAppearance.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};\
+            self.navigationController.navigationBar.standardAppearance = barAppearance;\
+            self.navigationController.navigationBar.scrollEdgeAppearance = barAppearance;\
+        }\
+        KNavBarTinColor_White\
+
+#define KNavBarTinColor_Black_AndBGColor(navBGColor) \
+        if (@available(iOS 15.0, *)) {\
+            UINavigationBarAppearance *barAppearance = [UINavigationBarAppearance new];\
+            barAppearance.backgroundColor = navBGColor;\
+            barAppearance.shadowColor = [UIColor clearColor];\
+            barAppearance.titleTextAttributes = @{NSForegroundColorAttributeName:rgb(51,51,51)};\
+            self.navigationController.navigationBar.standardAppearance = barAppearance;\
+            self.navigationController.navigationBar.scrollEdgeAppearance = barAppearance;\
+        }\
+        KNavBarTinColor_Black\
+
+
 #define AppName [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]
 
 
